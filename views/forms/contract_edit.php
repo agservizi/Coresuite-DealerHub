@@ -6,7 +6,7 @@
         <p class="text-muted mb-0">Aggiorna stato e dati anagrafici per mantenere la pipeline allineata.</p>
     </div>
     <div class="ghost-page-actions">
-        <a href="/contracts" class="ghost-button secondary"><i class="bi bi-arrow-left"></i>Lista contratti</a>
+        <a href="<?= url('contracts'); ?>" class="ghost-button secondary"><i class="bi bi-arrow-left"></i>Lista contratti</a>
     </div>
 </section>
 <section class="ghost-form-card">
@@ -97,7 +97,7 @@
         <div class="card shadow-sm">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">Modifica contratto #<?= $contract['id']; ?></h4>
-                <a href="/contracts" class="btn btn-sm btn-outline-secondary">Indietro</a>
+                <a href="<?= url('contracts'); ?>" class="btn btn-sm btn-outline-secondary">Indietro</a>
             </div>
             <form class="card-body" method="post">
                 <?= csrfTokenField(); ?>

@@ -6,7 +6,7 @@
     <button class="ghost-icon-button d-none d-lg-grid" type="button" data-sidebar-toggle aria-label="Comprimi barra laterale" title="Comprimi barra laterale">
         <i class="bi bi-chevron-double-left"></i>
     </button>
-    <form class="ghost-search d-none d-md-block" method="get" action="/contracts">
+    <form class="ghost-search d-none d-md-block" method="get" action="<?= url('contracts'); ?>">
         <i class="bi bi-search"></i>
         <input type="search" name="q" placeholder="Cerca contratti, clienti o ID...">
     </form>
@@ -47,8 +47,8 @@
                 <i class="bi bi-chevron-down"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-end">
-                <a class="dropdown-item" href="/profile"><i class="bi bi-person me-2"></i>Profilo</a>
-                <a class="dropdown-item" href="/logout.php"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+                <a class="dropdown-item" href="<?= url('profile'); ?>"><i class="bi bi-person me-2"></i>Profilo</a>
+                <a class="dropdown-item" href="<?= url('logout.php'); ?>"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
             </div>
         </div>
     </div>

@@ -34,7 +34,7 @@
                     </select>
                 </div>
                 <div class="d-flex justify-content-end gap-2">
-                    <a href="/users" class="btn btn-outline-secondary">Annulla</a>
+                    <a href="<?= url('users'); ?>" class="btn btn-outline-secondary">Annulla</a>
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </div>
             </form>

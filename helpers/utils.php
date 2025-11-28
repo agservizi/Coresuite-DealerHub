@@ -12,9 +12,27 @@ function sanitize(?string $value): string
     return htmlspecialchars(trim((string) $value), ENT_QUOTES, 'UTF-8');
 }
 
+function url(string $path = ''): string
+{
+    if ($path === '') {
+        return APP_URL;
+    }
+
+    if (preg_match('#^(https?:)?//#', $path)) {
+        return $path;
+    }
+
+    return APP_URL . '/' . ltrim($path, '/');
+}
+
+function asset(string $path): string
+{
+    return url('assets/' . ltrim($path, '/'));
+}
+
 function redirect(string $path): void
 {
-    header('Location: ' . $path);
+    header('Location: ' . url($path));
     exit;
 }
 
@@ -78,7 +96,14 @@ function getFlash(string $key): ?array
 function currentPath(): string
 {
     $uri = $_SERVER['REQUEST_URI'] ?? '/';
-    return strtok($uri, '?');
+    $path = strtok($uri, '?') ?: '/';
+    $base = APP_BASE_PATH;
+
+    if ($base && str_starts_with($path, $base)) {
+        $path = substr($path, strlen($base)) ?: '/';
+    }
+
+    return $path;
 }
 
 function formatDateTime(string $datetime): string
