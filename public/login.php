@@ -17,8 +17,8 @@ $flash = getFlash('auth');
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/app.css">
+    <link href="<?= APP_URL; ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= APP_URL; ?>/assets/css/app.css">
 </head>
 <body class="login-ghost">
     <div class="ghost-pattern"></div>
@@ -51,6 +51,6 @@ $flash = getFlash('auth');
             <button class="ghost-button w-100 justify-content-center" type="submit">Accedi</button>
         </form>
     </div>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= APP_URL; ?>/assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
