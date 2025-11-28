@@ -9,8 +9,8 @@
         </p>
     </div>
     <div class="ghost-page-actions">
-        <a href="<?= url('dashboard'); ?>" class="ghost-button secondary"><i class="bi bi-speedometer2"></i>Dashboard</a>
-        <a href="<?= url('logout.php'); ?>" class="ghost-button"><i class="bi bi-box-arrow-right"></i>Logout</a>
+        <a href="/dashboard" class="ghost-button secondary"><i class="bi bi-speedometer2"></i>Dashboard</a>
+        <a href="/logout.php" class="ghost-button"><i class="bi bi-box-arrow-right"></i>Logout</a>
     </div>
 </section>
 
@@ -108,7 +108,7 @@
     <article class="ghost-card">
         <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
             <h5 class="mb-0">Contratti recenti</h5>
-            <a href="<?= url('contracts'); ?>" class="ghost-button secondary"><i class="bi bi-files"></i>Vai alla lista</a>
+            <a href="/contracts" class="ghost-button secondary"><i class="bi bi-files"></i>Vai alla lista</a>
         </div>
         <?php if (!empty($recentContracts)): ?>
             <div class="ghost-table-wrapper">

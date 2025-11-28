@@ -7,7 +7,7 @@
         <p class="text-muted mb-0">Controlla lo stato delle tue pratiche e carica rapidamente nuovi contratti.</p>
     </div>
     <div class="ghost-page-actions">
-        <a href="<?= url('contracts/create'); ?>" class="ghost-button"><i class="bi bi-plus-circle"></i>Nuovo contratto</a>
+        <a href="/contracts/create" class="ghost-button"><i class="bi bi-plus-circle"></i>Nuovo contratto</a>
     </div>
 </section>
 <section class="ghost-grid kpi">
@@ -31,7 +31,7 @@
     <article class="ghost-card">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="mb-0">I miei contratti</h5>
-            <a class="ghost-button secondary" href="<?= url('contracts'); ?>">Vedi tutti</a>
+            <a class="ghost-button secondary" href="/contracts">Vedi tutti</a>
         </div>
         <div class="ghost-table-wrapper">
             <table class="ghost-table">

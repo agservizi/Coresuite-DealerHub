@@ -30,8 +30,8 @@ $entries = $log->latest();
         <p class="text-muted mb-0">Monitoraggio in tempo reale delle performance rete.</p>
     </div>
     <div class="ghost-page-actions">
-        <a href="<?= url('reports'); ?>" class="ghost-button secondary"><i class="bi bi-graph-up"></i>Report avanzati</a>
-        <a href="<?= url('contracts/create'); ?>" class="ghost-button"><i class="bi bi-rocket"></i>Nuovo contratto</a>
+        <a href="/reports" class="ghost-button secondary"><i class="bi bi-graph-up"></i>Report avanzati</a>
+        <a href="/contracts/create" class="ghost-button"><i class="bi bi-rocket"></i>Nuovo contratto</a>
     </div>
 </section>
 <section class="ghost-grid kpi">
@@ -94,7 +94,7 @@ $entries = $log->latest();
     <article class="ghost-card">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="mb-0">Contratti recenti</h5>
-            <a href="<?= url('contracts'); ?>" class="ghost-button secondary">Vedi tutti</a>
+            <a href="/contracts" class="ghost-button secondary">Vedi tutti</a>
         </div>
         <div class="ghost-table-wrapper">
             <table class="ghost-table">

@@ -10,7 +10,7 @@ $pageTitle = $isEdit ? 'Modifica contratto' : 'Nuovo contratto';
         <p class="text-muted mb-0">Compila in modo guidato tutti i dati del cliente, scegli la tipologia di contratto e allega la documentazione obbligatoria.</p>
     </div>
     <div class="ghost-page-actions">
-        <a href="<?= url('contracts'); ?>" class="ghost-button secondary"><i class="bi bi-arrow-left"></i>Lista contratti</a>
+        <a href="/contracts" class="ghost-button secondary"><i class="bi bi-arrow-left"></i>Lista contratti</a>
     </div>
 </section>
 <form id="contractForm" class="ghost-form needs-validation" method="post" enctype="multipart/form-data" novalidate>

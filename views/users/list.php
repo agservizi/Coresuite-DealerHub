@@ -6,7 +6,7 @@
         <p class="text-muted mb-0">Crea, attiva o sospendi i rivenditori affiliati.</p>
     </div>
     <div class="ghost-page-actions">
-        <a href="<?= url('users/create'); ?>" class="ghost-button"><i class="bi bi-person-plus"></i>Nuovo affiliato</a>
+        <a href="/users/create" class="ghost-button"><i class="bi bi-person-plus"></i>Nuovo affiliato</a>
     </div>
 </section>
 <section class="ghost-card">
@@ -36,8 +36,8 @@
                         </td>
                         <td class="text-end">
                             <div class="ghost-page-actions justify-content-end">
-                                <a href="<?= url('users/edit/' . $item['id']); ?>" class="ghost-button secondary"><i class="bi bi-pencil"></i>Modifica</a>
-                                <a href="<?= url('users/toggle/' . $item['id']); ?>" class="ghost-button secondary"><i class="bi bi-arrow-repeat"></i>Toggle</a>
+                                <a href="/users/edit/<?= $item['id']; ?>" class="ghost-button secondary"><i class="bi bi-pencil"></i>Modifica</a>
+                                <a href="/users/toggle/<?= $item['id']; ?>" class="ghost-button secondary"><i class="bi bi-arrow-repeat"></i>Toggle</a>
                             </div>
                         </td>
                     </tr>

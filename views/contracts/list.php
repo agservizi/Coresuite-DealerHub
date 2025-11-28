@@ -7,9 +7,9 @@
     </div>
     <div class="ghost-page-actions">
         <?php if (hasRole('superadmin')): ?>
-            <a href="<?= url('contracts/export'); ?>" class="ghost-button secondary"><i class="bi bi-download"></i>Export CSV</a>
+            <a href="/contracts/export" class="ghost-button secondary"><i class="bi bi-download"></i>Export CSV</a>
         <?php endif; ?>
-        <a href="<?= url('contracts/create'); ?>" class="ghost-button"><i class="bi bi-plus-circle"></i>Nuovo contratto</a>
+        <a href="/contracts/create" class="ghost-button"><i class="bi bi-plus-circle"></i>Nuovo contratto</a>
     </div>
 </section>
 <section class="ghost-card">
@@ -35,9 +35,9 @@
                         <td><?= formatDateTime($contract['created_at']); ?></td>
                         <td class="text-end">
                             <div class="ghost-page-actions justify-content-end">
-                                <a href="<?= url('contracts/edit/' . $contract['id']); ?>" class="ghost-button secondary"><i class="bi bi-pencil"></i>Modifica</a>
+                                <a href="/contracts/edit/<?= $contract['id']; ?>" class="ghost-button secondary"><i class="bi bi-pencil"></i>Modifica</a>
                                 <?php if (hasRole('superadmin')): ?>
-                                    <a href="<?= url('contracts/delete/' . $contract['id']); ?>" class="ghost-button danger" onclick="return confirm('Confermi eliminazione?');"><i class="bi bi-trash"></i>Elimina</a>
+                                    <a href="/contracts/delete/<?= $contract['id']; ?>" class="ghost-button danger" onclick="return confirm('Confermi eliminazione?');"><i class="bi bi-trash"></i>Elimina</a>
                                 <?php endif; ?>
                             </div>
                         </td>
