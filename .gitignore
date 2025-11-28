@@ -1,0 +1,41 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Composer dependencies
+vendor/
+
+# Node modules
+node_modules/
+
+# Cache and logs
+storage/cache/
+storage/logs/
+*.log
+
+# Uploads (user-generated content)
+storage/uploads/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+tmp/
+temp/
+
+# Build artifacts
+build/
+dist/
+
+# Database files
+*.sqlite
+*.db
+
+# PHP specific
+.phpunit.result.cache
