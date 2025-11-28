@@ -14,7 +14,11 @@ function sanitize(?string $value): string
 
 function redirect(string $path): void
 {
-    header('Location: ' . $path);
+    $target = $path;
+    if (isset($path[0]) && $path[0] === '/' && defined('APP_URL')) {
+        $target = rtrim(APP_URL, '/') . $path;
+    }
+    header('Location: ' . $target);
     exit;
 }
 

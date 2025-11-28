@@ -70,6 +70,6 @@ spl_autoload_register(function (string $class): void {
 
 // Global constants
 const APP_NAME = 'Coresuite DealerHub';
-const APP_URL = 'https://dealerhub.coresuite.it';
+define('APP_URL', rtrim(env('APP_URL', 'https://dealerhub.coresuite.it'), '/'));
 
 ?>
