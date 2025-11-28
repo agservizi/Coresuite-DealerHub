@@ -11,7 +11,8 @@ node_modules/
 
 # Cache and logs
 storage/cache/
-storage/logs/
+storage/logs/*
+!storage/logs/.gitignore
 *.log
 
 # Uploads (user-generated content)

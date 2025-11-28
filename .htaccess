@@ -3,3 +3,10 @@ RewriteEngine On
 # Serve the public directory as the web root.
 RewriteRule ^$ public/index.php [L]
 RewriteRule (.*) public/$1 [L]
+
+# Temporary debugging overrides
+php_flag display_errors On
+php_flag display_startup_errors On
+php_value error_reporting 32767
+php_flag log_errors On
+php_value error_log storage/logs/php-error.log
