@@ -19,7 +19,7 @@ const adminLinks = [
   { label: "Affiliati", href: "/affiliates", icon: Building2 },
 ];
 
-export function Sidebar() {
+export function Sidebar({ isOpen, onClose }: { isOpen?: boolean; onClose?: () => void }) {
   const pathname = usePathname();
   const { user } = useAuth();
   const [collapsed, setCollapsed] = useState(false);
@@ -31,9 +31,18 @@ export function Sidebar() {
   ];
 
   return (
-    <aside className={`hidden min-h-screen flex-col bg-blue-900/70 py-8 text-white md:flex sticky top-0 transition-all duration-300 ${
-      collapsed ? "w-16 px-2" : "w-64 px-4"
-    }`}>
+    <>
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50 md:hidden"
+          onClick={onClose}
+        />
+      )}
+      <aside className={`flex-col bg-blue-900/70 py-8 text-white sticky top-0 transition-all duration-300 md:flex ${
+        collapsed ? "w-16 px-2" : "w-64 px-4"
+      } ${
+        isOpen ? "fixed inset-y-0 left-0 z-50 w-64 px-4 md:relative md:inset-auto" : "hidden md:flex"
+      }`}>
       <div className="mb-8 flex items-center justify-between">
         {!collapsed && <div className="text-xl font-semibold">DealerHub</div>}
         <button
@@ -62,5 +71,6 @@ export function Sidebar() {
         })}
       </nav>
     </aside>
+    </>
   );
 }
