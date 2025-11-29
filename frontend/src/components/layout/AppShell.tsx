@@ -12,18 +12,18 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center text-white">
+      <div className="flex min-h-screen items-center justify-center text-gray-900">
         Caricamento sessione...
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen bg-blue-950 text-white">
+    <div className="flex min-h-screen bg-gray-100 text-gray-900">
       <Sidebar isOpen={mobileSidebarOpen} onClose={() => setMobileSidebarOpen(false)} />
       <div className="flex flex-1 flex-col">
         <Navbar onMenuClick={() => setMobileSidebarOpen(true)} />
-        <main className="flex-1 bg-linear-to-b from-blue-950 via-blue-900 to-blue-950 px-4 py-8">
+        <main className="flex-1 bg-gray-100 px-4 py-8">
           {children}
         </main>
       </div>

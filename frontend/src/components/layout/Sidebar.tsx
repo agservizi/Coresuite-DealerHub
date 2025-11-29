@@ -38,7 +38,7 @@ export function Sidebar({ isOpen, onClose }: { isOpen?: boolean; onClose?: () =>
           onClick={onClose}
         />
       )}
-      <aside className={`flex-col bg-blue-900/70 py-8 text-white sticky top-0 transition-all duration-300 md:flex ${
+      <aside className={`flex-col bg-blue-950 py-8 text-white sticky top-0 transition-all duration-300 md:flex ${
         collapsed ? "w-16 px-2" : "w-64 px-4"
       } ${
         isOpen ? "fixed inset-y-0 left-0 z-50 w-64 px-4 md:relative md:inset-auto" : "hidden md:flex"
@@ -47,7 +47,7 @@ export function Sidebar({ isOpen, onClose }: { isOpen?: boolean; onClose?: () =>
         {!collapsed && <div className="text-xl font-semibold">DealerHub</div>}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="rounded p-1 hover:bg-slate-800/60 transition"
+          className="rounded p-1 hover:bg-blue-800 transition"
         >
           {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
         </button>
@@ -59,7 +59,7 @@ export function Sidebar({ isOpen, onClose }: { isOpen?: boolean; onClose?: () =>
             <Link
               key={href}
               href={href}
-              className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition hover:bg-blue-800/60 ${
+              className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition hover:bg-blue-800 ${
                 active ? "bg-blue-800 text-white" : "text-gray-300"
               } ${collapsed ? "justify-center px-2" : ""}`}
               title={collapsed ? label : undefined}

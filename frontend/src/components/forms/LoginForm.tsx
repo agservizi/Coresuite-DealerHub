@@ -36,7 +36,7 @@ export function LoginForm() {
           name="email"
           type="email"
           required
-          className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 p-3 text-white"
+          className="mt-1 w-full rounded-xl border border-gray-300 bg-gray-100 p-3 text-gray-900"
         />
       </label>
       <label className="text-sm">
@@ -45,7 +45,7 @@ export function LoginForm() {
           name="password"
           type="password"
           required
-          className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 p-3 text-white"
+          className="mt-1 w-full rounded-xl border border-gray-300 bg-gray-100 p-3 text-gray-900"
         />
       </label>
       {error && <p className="text-sm text-rose-400">{error}</p>}
@@ -56,8 +56,8 @@ export function LoginForm() {
       >
         {loading ? "Accesso in corso..." : "Accedi"}
       </button>
-      <p className="text-center text-xs text-gray-400">
-        <a href="/forgot-password" className="text-emerald-300">
+      <p className="text-center text-xs text-gray-500">
+        <a href="/forgot-password" className="text-emerald-600">
           Recupera password
         </a>
       </p>

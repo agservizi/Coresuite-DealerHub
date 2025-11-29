@@ -7,7 +7,7 @@ import type { ContractSummary } from "@/types";
 export function ContractsTable({ contracts }: { contracts: ContractSummary[] }) {
   return (
     <div className="glass-card overflow-hidden">
-      <div className="flex items-center justify-between border-b border-white/5 px-4 py-2 text-sm text-gray-400">
+      <div className="flex items-center justify-between border-b border-gray-200 px-4 py-2 text-sm text-gray-500">
         <span>Ultimi contratti</span>
         <Link href="/contracts" className="inline-flex items-center gap-1 text-emerald-300">
           Vedi tutti <ArrowUpRight size={16} />

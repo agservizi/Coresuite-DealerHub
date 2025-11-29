@@ -121,7 +121,7 @@ export default function AffiliatesPage() {
         </div>
       )}
       <div className="glass-card overflow-hidden">
-        <div className="grid grid-cols-5 bg-white/5 px-4 py-2 text-xs uppercase text-gray-400">
+        <div className="grid grid-cols-5 bg-gray-50 px-4 py-2 text-xs uppercase text-gray-500">
           <span>Nome</span>
           <span>Email</span>
           <span>Contratti</span>

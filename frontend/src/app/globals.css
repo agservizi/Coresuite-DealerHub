@@ -26,11 +26,10 @@ body {
 }
 
 @utility glass-card {
-  background-color: rgb(15 23 42 / 0.75);
-  border: 1px solid rgb(148 163 184 / 0.1);
+  background-color: white;
+  border: 1px solid rgb(229 231 235);
   border-radius: 1rem;
-  box-shadow: 0 20px 45px rgb(15 23 42 / 0.35);
-  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 @utility dashboard-grid {
