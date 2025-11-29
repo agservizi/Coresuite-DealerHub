@@ -1,6 +1,6 @@
 # DealerHub
 
-Portale professionale per la gestione dei contratti Telefonia / Luce / Gas con frontend Next.js (static export) e backend PHP puro, ottimizzato sia per hosting condivisi (Hostinger) sia per Render (deploy separato frontend/postgres backend).
+Portale professionale per la gestione dei contratti Telefonia / Luce / Gas con frontend Next.js (static export) e backend PHP puro pensato per hosting Hostinger shared.
 
 ## Struttura
 
@@ -25,20 +25,6 @@ Variabili utili in `.env.local`:
 NEXT_PUBLIC_API_BASE_URL=https://dealer.coresuite.it/api
 ```
 
-## Configurazione variabili ambiente backend
-
-Impostare un file `.env` (o le Environment Variables su Render) con:
-
-```
-DATABASE_URL=postgres://user:password@host:port/dbname   # oppure DB_HOST / DB_NAME ...
-UPLOAD_BASE_PATH=/opt/render/project/src/uploads/contratti
-APP_KEY=chiave-segreta
-APP_URL=https://dealerhub-frontend.onrender.com
-NEXT_PUBLIC_API_BASE_URL=https://dealerhub-backend.onrender.com/api
-```
-
-`db.php` supporta automaticamente `DATABASE_URL` (Postgres) oppure la coppia `DB_HOST`, `DB_NAME`, ecc. Rimane la compatibilità con MySQL impostando `DB_DRIVER=mysql`.
-
 ## Deploy Hostinger
 
 1. Eseguire `npm run build && npm run export` e caricare `frontend/out/*` in `public_html/`.
@@ -57,9 +43,9 @@ NEXT_PUBLIC_API_BASE_URL=https://dealerhub-backend.onrender.com/api
 - `coverage.php`: placeholder per verifiche copertura (simulato, da integrare con API reali).
 - `stats.php`: statistiche aggregate.
 
-## Database di riferimento (Postgres)
+## Database di riferimento
 
-`backend/schema.sql` ora utilizza tipi ENUM Postgres e serial auto-increment: eseguire con `psql "$DATABASE_URL" -f backend/schema.sql`. Il trigger `set_timestamp` aggiorna automaticamente `updated_at` ad ogni modifica dei contratti.
+Vedi `backend/schema.sql` per creare le tabelle `users`, `user_tokens`, `contracts`.
 
 ## Sicurezza e middleware
 
