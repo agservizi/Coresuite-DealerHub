@@ -144,7 +144,7 @@ export function ContractForm({ onSuccess }: { onSuccess?: () => void }) {
       </div>
       <button
         type="submit"
-        className="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-slate-900 transition hover:bg-emerald-400 disabled:opacity-60"
+        className="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-white transition hover:bg-emerald-400 disabled:opacity-60"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Salvataggio..." : "Salva contratto"}

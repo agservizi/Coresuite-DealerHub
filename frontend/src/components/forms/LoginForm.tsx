@@ -51,12 +51,12 @@ export function LoginForm() {
       {error && <p className="text-sm text-rose-400">{error}</p>}
       <button
         type="submit"
-        className="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-slate-900"
+        className="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-white"
         disabled={loading}
       >
         {loading ? "Accesso in corso..." : "Accedi"}
       </button>
-      <p className="text-center text-xs text-slate-400">
+      <p className="text-center text-xs text-gray-400">
         <a href="/forgot-password" className="text-emerald-300">
           Recupera password
         </a>

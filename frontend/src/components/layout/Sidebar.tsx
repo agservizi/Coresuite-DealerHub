@@ -31,7 +31,7 @@ export function Sidebar() {
   ];
 
   return (
-    <aside className={`hidden min-h-screen flex-col bg-slate-900/70 py-8 text-slate-200 md:flex sticky top-0 transition-all duration-300 ${
+    <aside className={`hidden min-h-screen flex-col bg-blue-900/70 py-8 text-white md:flex sticky top-0 transition-all duration-300 ${
       collapsed ? "w-16 px-2" : "w-64 px-4"
     }`}>
       <div className="mb-8 flex items-center justify-between">
@@ -50,8 +50,8 @@ export function Sidebar() {
             <Link
               key={href}
               href={href}
-              className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition hover:bg-slate-800/60 ${
-                active ? "bg-slate-800 text-white" : "text-slate-300"
+              className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition hover:bg-blue-800/60 ${
+                active ? "bg-blue-800 text-white" : "text-gray-300"
               } ${collapsed ? "justify-center px-2" : ""}`}
               title={collapsed ? label : undefined}
             >

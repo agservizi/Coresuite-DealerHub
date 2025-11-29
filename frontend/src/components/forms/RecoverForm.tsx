@@ -43,7 +43,7 @@ export function RecoverForm() {
       </label>
       <button
         type="submit"
-        className="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-slate-900"
+        className="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-white"
         disabled={loading}
       >
         {loading ? "Invio..." : "Recupera password"}

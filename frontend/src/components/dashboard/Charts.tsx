@@ -16,7 +16,7 @@ export function DashboardCharts({ bars, lines, donut }: Props) {
   return (
     <div className="grid gap-6 lg:grid-cols-3">
       <div className="glass-card col-span-2 p-4 h-64">
-        <p className="mb-2 text-sm text-slate-400">Contratti per data</p>
+        <p className="mb-2 text-sm text-gray-400">Contratti per data</p>
         <div className="h-full">
           <Line
             className="bg-transparent"
@@ -37,7 +37,7 @@ export function DashboardCharts({ bars, lines, donut }: Props) {
         </div>
       </div>
       <div className="glass-card p-4 h-64">
-        <p className="mb-2 text-sm text-slate-400">Contratti per tipo servizio</p>
+        <p className="mb-2 text-sm text-gray-400">Contratti per tipo servizio</p>
         <div className="h-full">
           <Doughnut
             data={{
@@ -55,7 +55,7 @@ export function DashboardCharts({ bars, lines, donut }: Props) {
         </div>
       </div>
       <div className="glass-card col-span-3 p-4 h-64">
-        <p className="mb-2 text-sm text-slate-400">Contratti per gestore</p>
+        <p className="mb-2 text-sm text-gray-400">Contratti per gestore</p>
         <div className="h-full">
           <Bar
             data={{

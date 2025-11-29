@@ -31,7 +31,7 @@ export default function ContractsPage() {
         cta={
           <Link
             href="/contracts/new"
-            className="rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900"
+            className="rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold text-white"
           >
             Nuovo contratto
           </Link>
@@ -39,7 +39,7 @@ export default function ContractsPage() {
       />
 
       <div className="glass-card overflow-hidden">
-        <div className="grid grid-cols-6 bg-white/5 px-4 py-2 text-xs uppercase text-slate-400">
+        <div className="grid grid-cols-6 bg-white/5 px-4 py-2 text-xs uppercase text-gray-400">
           <span>Cliente</span>
           <span>Servizio</span>
           <span>Gestore</span>
@@ -59,13 +59,13 @@ export default function ContractsPage() {
                 </span>
               </span>
               <span>{contract.affiliateName}</span>
-              <span className="text-xs text-slate-400">
+              <span className="text-xs text-gray-400">
                 {new Date(contract.updatedAt).toLocaleDateString("it-IT")}
               </span>
             </div>
           ))}
           {!contracts.length && (
-            <p className="px-4 py-6 text-center text-sm text-slate-400">
+            <p className="px-4 py-6 text-center text-sm text-gray-400">
               Nessun contratto presente.
             </p>
           )}

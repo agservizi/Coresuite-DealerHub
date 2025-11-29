@@ -17,11 +17,11 @@ export function AppShell({ children }: { children: ReactNode }) {
   }
 
   return (
-    <div className="flex min-h-screen bg-slate-950 text-slate-100">
+    <div className="flex min-h-screen bg-blue-950 text-white">
       <Sidebar />
       <div className="flex flex-1 flex-col">
         <Navbar />
-        <main className="flex-1 bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-8">
+        <main className="flex-1 bg-linear-to-b from-blue-950 via-blue-900 to-blue-950 px-4 py-8">
           {children}
         </main>
       </div>

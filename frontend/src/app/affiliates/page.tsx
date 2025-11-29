@@ -47,7 +47,7 @@ export default function AffiliatesPage() {
         description="Gestisci accessi, reset password e stato attivazione"
       />
       <div className="glass-card overflow-hidden">
-        <div className="grid grid-cols-5 bg-white/5 px-4 py-2 text-xs uppercase text-slate-400">
+        <div className="grid grid-cols-5 bg-white/5 px-4 py-2 text-xs uppercase text-gray-400">
           <span>Nome</span>
           <span>Email</span>
           <span>Contratti</span>
@@ -77,7 +77,7 @@ export default function AffiliatesPage() {
             </div>
           ))}
           {!affiliates.length && (
-            <p className="px-4 py-6 text-center text-sm text-slate-400">
+            <p className="px-4 py-6 text-center text-sm text-gray-400">
               Nessun affiliato disponibile.
             </p>
           )}

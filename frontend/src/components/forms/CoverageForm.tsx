@@ -36,7 +36,7 @@ export function CoverageForm() {
   return (
     <div className="grid gap-6 lg:grid-cols-2">
       <form className="glass-card p-5" onSubmit={handleSubmit}>
-        <p className="mb-4 text-sm text-slate-400">
+        <p className="mb-4 text-sm text-gray-400">
           Inserisci indirizzo per controllare la copertura {operator}.
         </p>
         <label className="text-sm">
@@ -65,23 +65,23 @@ export function CoverageForm() {
         </label>
         <button
           type="submit"
-          className="mt-4 w-full rounded-xl bg-sky-500 py-2 font-semibold text-slate-900"
+          className="mt-4 w-full rounded-xl bg-sky-500 py-2 font-semibold text-white"
           disabled={loading}
         >
           {loading ? "Ricerca in corso..." : "Verifica"}
         </button>
       </form>
       <div className="glass-card p-5">
-        {!result && <p className="text-sm text-slate-400">Nessuna verifica effettuata.</p>}
+        {!result && <p className="text-sm text-gray-400">Nessuna verifica effettuata.</p>}
         {result && (
           <div>
-            <p className="text-sm text-slate-400">Risultato</p>
+            <p className="text-sm text-gray-400">Risultato</p>
             <p className="text-2xl font-semibold text-white">{result.available ? "Copertura disponibile" : "Non disponibile"}</p>
-            <p className="mt-2 text-sm text-slate-300">
+            <p className="mt-2 text-sm text-gray-300">
               Tecnologie: {result.technologies.join(", ")}
             </p>
             {result.notes && (
-              <p className="mt-2 text-xs text-slate-400">{result.notes}</p>
+              <p className="mt-2 text-xs text-gray-400">{result.notes}</p>
             )}
           </div>
         )}

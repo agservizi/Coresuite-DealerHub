@@ -28,7 +28,7 @@ export default function ContractsExportPage() {
             <option value="pdf">PDF</option>
           </select>
         </label>
-        <button className="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-slate-900">
+        <button className="w-full rounded-xl bg-emerald-500 py-3 font-semibold text-white">
           Esporta
         </button>
       </div>
