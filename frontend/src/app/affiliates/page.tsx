@@ -13,19 +13,39 @@ interface Affiliate {
   email: string;
   contracts: number;
   active: boolean;
+  role: string;
 }
 
 export default function AffiliatesPage() {
   useAuthGuard({ allowedRoles: ["SUPERADMIN"] });
   const { token } = useAuth();
   const [affiliates, setAffiliates] = useState<Affiliate[]>([]);
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [newAffiliate, setNewAffiliate] = useState({ name: '', email: '', password: 'Dealer123' });
 
   useEffect(() => {
     if (!token) return;
     fetchAffiliates(token)
-      .then((data) => setAffiliates(data as Affiliate[]))
+      .then((data) => setAffiliates((data as Affiliate[]).filter(u => u.role === 'AFFILIATO')))
       .catch(console.error);
   }, [token]);
+
+  const createAffiliate = async () => {
+    if (!token || !newAffiliate.name || !newAffiliate.email) return;
+    await manageAffiliate(token, {
+      action: 'create',
+      name: newAffiliate.name,
+      email: newAffiliate.email,
+      password: newAffiliate.password,
+      role: 'AFFILIATO',
+    });
+    setNewAffiliate({ name: '', email: '', password: 'Dealer123' });
+    setShowCreateForm(false);
+    // Ricarica la lista
+    fetchAffiliates(token)
+      .then((data) => setAffiliates((data as Affiliate[]).filter(u => u.role === 'AFFILIATO')))
+      .catch(console.error);
+  };
 
   const toggleAffiliate = async (affiliate: Affiliate) => {
     if (!token) return;
@@ -40,12 +60,66 @@ export default function AffiliatesPage() {
     );
   };
 
+  const resetPassword = async (affiliate: Affiliate) => {
+    if (!token) return;
+    const newPassword = prompt(`Nuova password per ${affiliate.name}:`, 'Dealer123');
+    if (!newPassword) return;
+    await manageAffiliate(token, {
+      action: 'reset-password',
+      userId: affiliate.id,
+      newPassword,
+    });
+    alert('Password resettata con successo');
+  };
+
   return (
     <AppShell>
       <PageHeader
         title="Affiliati"
         description="Gestisci accessi, reset password e stato attivazione"
       />
+      <div className="mb-4 flex justify-end">
+        <button
+          className="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-white"
+          onClick={() => setShowCreateForm(!showCreateForm)}
+        >
+          {showCreateForm ? 'Annulla' : 'Crea Affiliato'}
+        </button>
+      </div>
+      {showCreateForm && (
+        <div className="glass-card mb-4 p-4">
+          <h3 className="mb-2 text-lg font-semibold">Crea Nuovo Affiliato</h3>
+          <div className="grid gap-4 md:grid-cols-3">
+            <input
+              type="text"
+              placeholder="Nome"
+              value={newAffiliate.name}
+              onChange={(e) => setNewAffiliate({ ...newAffiliate, name: e.target.value })}
+              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={newAffiliate.email}
+              onChange={(e) => setNewAffiliate({ ...newAffiliate, email: e.target.value })}
+              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={newAffiliate.password}
+              onChange={(e) => setNewAffiliate({ ...newAffiliate, password: e.target.value })}
+              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            />
+          </div>
+          <button
+            className="mt-4 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-white"
+            onClick={createAffiliate}
+          >
+            Crea
+          </button>
+        </div>
+      )}
       <div className="glass-card overflow-hidden">
         <div className="grid grid-cols-5 bg-white/5 px-4 py-2 text-xs uppercase text-gray-400">
           <span>Nome</span>
@@ -70,7 +144,10 @@ export default function AffiliatesPage() {
                 >
                   {affiliate.active ? "Disattiva" : "Attiva"}
                 </button>
-                <button className="rounded-full border border-white/10 px-3 py-1 text-xs">
+                <button
+                  className="rounded-full border border-white/10 px-3 py-1 text-xs"
+                  onClick={() => resetPassword(affiliate)}
+                >
                   Reset password
                 </button>
               </div>
