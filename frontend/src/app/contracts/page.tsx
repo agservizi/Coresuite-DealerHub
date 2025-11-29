@@ -38,7 +38,7 @@ export default function ContractsPage() {
         }
       />
 
-      <div className="glass-card overflow-hidden">
+      <div className="glass-card overflow-hidden overflow-x-auto">
         <div className="grid grid-cols-6 bg-gray-50 px-4 py-2 text-xs uppercase text-gray-500">
           <span>Cliente</span>
           <span>Servizio</span>

@@ -4,11 +4,14 @@ import { LogOut, Menu } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import clsx from "clsx";
 
-export function Navbar({ onMenuClick, collapsed }: { onMenuClick?: () => void; collapsed?: boolean }) {
+export function Navbar({ onMenuClick, collapsed, mobileSidebarOpen }: { onMenuClick?: () => void; collapsed?: boolean; mobileSidebarOpen?: boolean }) {
   const { user, logout } = useAuth();
 
   return (
-    <header className={clsx("flex items-center justify-between border-b border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 sticky top-0 z-10", collapsed ? "md:ml-16" : "md:ml-64")}>
+    <header className={clsx("flex items-center justify-between border-b border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 sticky top-0 z-10", 
+      collapsed ? "md:ml-16" : "md:ml-64",
+      mobileSidebarOpen ? "ml-64" : ""
+    )}>
       <div className="flex items-center gap-4">
         <button
           onClick={onMenuClick}
