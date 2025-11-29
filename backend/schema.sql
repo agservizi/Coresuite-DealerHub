@@ -1,0 +1,37 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(120) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    role ENUM('SUPERADMIN','AFFILIATO') DEFAULT 'AFFILIATO',
+    affiliate_id INT NULL,
+    active TINYINT(1) DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE user_tokens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    token_hash CHAR(64) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    INDEX(token_hash)
+);
+
+CREATE TABLE contracts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    affiliate_id INT NOT NULL,
+    customer_name VARCHAR(160) NOT NULL,
+    customer_email VARCHAR(160) NULL,
+    customer_phone VARCHAR(60) NULL,
+    provider VARCHAR(80) NOT NULL,
+    service_type ENUM('MOBILE','FIBRA','LUCE','GAS') DEFAULT 'MOBILE',
+    status ENUM('NUOVO','IN_ELABORAZIONE','INVIATO','ACCETTATO','RIFIUTATO') DEFAULT 'NUOVO',
+    notes TEXT NULL,
+    document_front VARCHAR(255) NULL,
+    document_back VARCHAR(255) NULL,
+    signed_form VARCHAR(255) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (affiliate_id) REFERENCES users(id)
+);
