@@ -42,7 +42,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return;
     }
 
-    let parsed: { token: string } | null = null;
+    let parsed: { token: string; user?: UserProfile } | null = null;
     try {
       parsed = JSON.parse(saved);
     } catch (error) {
@@ -53,10 +53,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return;
     }
 
+    // If user is saved, use it directly
+    if (parsed.user) {
+      setUser(parsed.user);
+      setToken(parsed.token);
+      setLoading(false);
+      return;
+    }
+
+    // Otherwise, fetch user
     meRequest(parsed.token)
       .then((response) => {
         setUser(response.user);
         setToken(parsed.token);
+        // Save user for future
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({ token: parsed.token, user: response.user })
+        );
       })
       .catch(() => {
         localStorage.removeItem(STORAGE_KEY);
@@ -74,7 +88,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (typeof window !== "undefined") {
       localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify({ token: nextToken, role: userProfile.role })
+        JSON.stringify({ token: nextToken, user: userProfile })
       );
     }
   };
