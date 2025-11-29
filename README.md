@@ -16,7 +16,7 @@ Portale professionale per la gestione dei contratti Telefonia / Luce / Gas con f
 cd frontend
 npm install
 npm run dev     # sviluppo
-npm run build && npm run export   # output statico in frontend/out
+npm run build   # output statico in frontend/out grazie a output: "export"
 ```
 
 Variabili utili in `.env.local`:
@@ -27,7 +27,7 @@ NEXT_PUBLIC_API_BASE_URL=https://dealer.coresuite.it/api
 
 ## Deploy Hostinger
 
-1. Eseguire `npm run build && npm run export` e caricare `frontend/out/*` in `public_html/`.
+1. Eseguire `npm run build` (produce già `frontend/out/*`) e caricare la cartella risultante in `public_html/`.
 2. Caricare la cartella `backend/api` dentro `public_html/api` insieme a `db.php` e `helpers.php`.
 3. Creare cartella `public_html/uploads/contratti` con permessi 775.
 4. Configurare `.env`/`php.ini` con le credenziali MySQL richieste da `backend/db.php`.
