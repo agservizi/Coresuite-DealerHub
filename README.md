@@ -61,3 +61,51 @@ Vedi `backend/schema.sql` per creare le tabelle `users`, `user_tokens`, `contrac
 4. Il superadmin vede tutte le statistiche in `/dashboard` e `/stats`, gestisce affiliati da `/affiliates` ed esporta contratti.
 
 Il progetto è pronto per iterazioni successive (integrazione API copertura reali, firma digitale, ecc.).
+
+## Deploy su Render
+
+### Backend (Web Service)
+
+1. Crea un nuovo **Web Service** su Render.
+2. Seleziona **Connect GitHub** e collega il tuo repo.
+3. Imposta **Root Directory**: `backend`
+4. **Build Command**: lascia vuoto o `echo "No build needed"`
+5. **Start Command**: `php -S 0.0.0.0:$PORT -t .`
+6. Aggiungi le seguenti **Environment Variables**:
+   - `DB_HOST`: il tuo host MySQL Hostinger (es. `sql123.hostinger.com`)
+   - `DB_NAME`: nome database
+   - `DB_USER`: username DB
+   - `DB_PASS`: password DB
+   - `APP_KEY`: chiave segreta per token (es. `your-secret-key-here`)
+   - `UPLOAD_DIR`: `/opt/render/project/src/uploads/contratti` (o percorso Render per uploads)
+7. Deploya il servizio. Nota l'URL generato (es. `https://dealerhub-backend.onrender.com`).
+
+### Frontend (Static Site)
+
+1. Crea un nuovo **Static Site** su Render.
+2. Seleziona **Connect GitHub** e collega il tuo repo.
+3. Imposta **Root Directory**: `frontend`
+4. **Build Command**: `npm run build`
+5. **Publish Directory**: `out`
+6. Aggiungi **Environment Variable**:
+   - `NEXT_PUBLIC_API_BASE_URL`: URL del backend Render (es. `https://dealerhub-backend.onrender.com/api`)
+7. Deploya il sito. Nota l'URL generato (es. `https://dealerhub-frontend.onrender.com`).
+
+### Database e seeding
+
+1. Su Hostinger, importa `backend/schema.sql` per creare le tabelle.
+2. Importa `populate_db.sql` per inserire il superadmin (email: `ag.servizi16@gmail.com`, password: `Giogiu2123@`).
+3. Assicurati che il DB sia accessibile dal backend Render (whitelist IP se necessario).
+
+### Configurazione dominio
+
+- Su Hostinger, configura il dominio `dealer.coresuite.it` per puntare al frontend Render (es. CNAME a `dealerhub-frontend.onrender.com`).
+- Per il backend, usa l'URL Render direttamente nelle chiamate API.
+
+### Test finale
+
+- Accedi al frontend, effettua login con le credenziali superadmin.
+- Verifica che le API funzionino (dashboard, contratti, ecc.).
+- Se necessario, aggiorna `.env` locale per testare con Render URLs.
+
+Questo deploy è ottimizzato per Render con separazione frontend/backend e DB esterno su Hostinger.
