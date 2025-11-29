@@ -5,10 +5,6 @@ import { DashboardCharts } from "@/components/dashboard/Charts";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { useAuthGuard } from "@/hooks/useAuthGuard";
 
-export const metadata = {
-  title: "DealerHub | Statistiche",
-};
-
 export default function StatsPage() {
   useAuthGuard({ allowedRoles: ["SUPERADMIN"] });
 

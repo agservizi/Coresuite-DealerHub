@@ -5,10 +5,6 @@ import { CoverageForm } from "@/components/forms/CoverageForm";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { useAuthGuard } from "@/hooks/useAuthGuard";
 
-export const metadata = {
-  title: "DealerHub | Controllo copertura",
-};
-
 export default function CoveragePage() {
   useAuthGuard({ allowedRoles: ["AFFILIATO"] });
 

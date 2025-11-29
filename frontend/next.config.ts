@@ -6,13 +6,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  eslint: {
-    // Hostinger build pipeline should not fail if lint warnings appear
-    ignoreDuringBuilds: true,
-  },
-  experimental: {
-    reactCompiler: false,
-  },
 };
 
 export default nextConfig;
