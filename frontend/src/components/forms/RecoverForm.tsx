@@ -38,7 +38,7 @@ export function RecoverForm() {
           name="email"
           type="email"
           required
-          className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 p-3 text-white"
+          className="mt-1 w-full rounded-xl border border-gray-300 bg-gray-50 p-3 text-gray-900"
         />
       </label>
       <button

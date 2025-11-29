@@ -17,12 +17,12 @@ export function ContractsTable({ contracts }: { contracts: ContractSummary[] }) 
         {contracts.map((contract) => (
           <div key={contract.id} className="flex flex-wrap items-center gap-3 px-4 py-3 text-sm">
             <div className="flex-1">
-              <p className="font-semibold text-white">{contract.customerName}</p>
+              <p className="font-semibold text-gray-900">{contract.customerName}</p>
               <p className="text-xs uppercase text-gray-400">
                 {contract.serviceType} • {contract.provider}
               </p>
             </div>
-            <span className="rounded-full bg-white/10 px-3 py-1 text-xs">
+            <span className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-900">
               {contract.status}
             </span>
             <span className="text-xs text-gray-400">

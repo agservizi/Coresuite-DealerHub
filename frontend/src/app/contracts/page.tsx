@@ -50,15 +50,15 @@ export default function ContractsPage() {
         <div className="divide-y divide-white/5">
           {contracts.map((contract) => (
             <div key={contract.id} className="grid grid-cols-6 items-center px-4 py-3 text-sm">
-              <span className="font-medium text-white">{contract.customerName}</span>
-              <span>{contract.serviceType}</span>
-              <span>{contract.provider}</span>
+              <span className="font-medium text-gray-900">{contract.customerName}</span>
+              <span className="text-gray-900">{contract.serviceType}</span>
+              <span className="text-gray-900">{contract.provider}</span>
               <span>
-                <span className="rounded-full bg-white/10 px-3 py-1 text-xs">
+                <span className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-900">
                   {contract.status}
                 </span>
               </span>
-              <span>{contract.affiliateName}</span>
+              <span className="text-gray-900">{contract.affiliateName}</span>
               <span className="text-xs text-gray-400">
                 {new Date(contract.updatedAt).toLocaleDateString("it-IT")}
               </span>

@@ -43,7 +43,7 @@ export function CoverageForm() {
           Indirizzo
           <input
             name="address"
-            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             required
           />
         </label>
@@ -51,7 +51,7 @@ export function CoverageForm() {
           Città
           <input
             name="city"
-            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             required
           />
         </label>
@@ -59,7 +59,7 @@ export function CoverageForm() {
           CAP
           <input
             name="zipCode"
-            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             required
           />
         </label>
@@ -76,7 +76,7 @@ export function CoverageForm() {
         {result && (
           <div>
             <p className="text-sm text-gray-400">Risultato</p>
-            <p className="text-2xl font-semibold text-white">{result.available ? "Copertura disponibile" : "Non disponibile"}</p>
+            <p className="text-2xl font-semibold text-gray-900">{result.available ? "Copertura disponibile" : "Non disponibile"}</p>
             <p className="mt-2 text-sm text-gray-300">
               Tecnologie: {result.technologies.join(", ")}
             </p>

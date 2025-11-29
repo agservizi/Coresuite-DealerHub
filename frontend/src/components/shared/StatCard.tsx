@@ -14,11 +14,11 @@ export function StatCard({ label, value, icon, highlight }: Props) {
         highlight ? "border-emerald-400/50" : ""
       }`}
     >
-      <div className="flex items-center justify-between text-xs uppercase tracking-wide text-slate-400">
+      <div className="flex items-center justify-between text-xs uppercase tracking-wide text-gray-500">
         {label}
         {icon}
       </div>
-      <p className="text-3xl font-semibold text-white">{value}</p>
+      <p className="text-3xl font-semibold text-gray-900">{value}</p>
     </div>
   );
 }

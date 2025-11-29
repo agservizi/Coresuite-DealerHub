@@ -95,21 +95,21 @@ export default function AffiliatesPage() {
               placeholder="Nome"
               value={newAffiliate.name}
               onChange={(e) => setNewAffiliate({ ...newAffiliate, name: e.target.value })}
-              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+              className="rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             />
             <input
               type="email"
               placeholder="Email"
               value={newAffiliate.email}
               onChange={(e) => setNewAffiliate({ ...newAffiliate, email: e.target.value })}
-              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+              className="rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             />
             <input
               type="password"
               placeholder="Password"
               value={newAffiliate.password}
               onChange={(e) => setNewAffiliate({ ...newAffiliate, password: e.target.value })}
-              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+              className="rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             />
           </div>
           <button
@@ -131,21 +131,21 @@ export default function AffiliatesPage() {
         <div className="divide-y divide-white/5 text-sm">
           {affiliates.map((affiliate) => (
             <div key={affiliate.id} className="grid grid-cols-5 items-center px-4 py-3">
-              <span className="font-medium text-white">{affiliate.name}</span>
-              <span>{affiliate.email}</span>
-              <span>{affiliate.contracts}</span>
+              <span className="font-medium text-gray-900">{affiliate.name}</span>
+              <span className="text-gray-900">{affiliate.email}</span>
+              <span className="text-gray-900">{affiliate.contracts}</span>
               <span className={affiliate.active ? "text-emerald-300" : "text-rose-300"}>
                 {affiliate.active ? "Attivo" : "Disattivato"}
               </span>
               <div className="flex gap-2">
                 <button
-                  className="rounded-full border border-white/10 px-3 py-1 text-xs"
+                  className="rounded-full border border-gray-300 px-3 py-1 text-xs text-gray-900"
                   onClick={() => toggleAffiliate(affiliate)}
                 >
                   {affiliate.active ? "Disattiva" : "Attiva"}
                 </button>
                 <button
-                  className="rounded-full border border-white/10 px-3 py-1 text-xs"
+                  className="rounded-full border border-gray-300 px-3 py-1 text-xs text-gray-900"
                   onClick={() => resetPassword(affiliate)}
                 >
                   Reset password

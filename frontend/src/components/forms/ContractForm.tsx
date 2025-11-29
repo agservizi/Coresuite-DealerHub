@@ -57,7 +57,7 @@ export function ContractForm({ onSuccess }: { onSuccess?: () => void }) {
         <label className="text-sm">
           Cliente
           <input
-            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             placeholder="Mario Rossi"
             {...register("customerName")}
           />
@@ -68,7 +68,7 @@ export function ContractForm({ onSuccess }: { onSuccess?: () => void }) {
         <label className="text-sm">
           Email
           <input
-            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             type="email"
             {...register("customerEmail")}
           />
@@ -76,14 +76,14 @@ export function ContractForm({ onSuccess }: { onSuccess?: () => void }) {
         <label className="text-sm">
           Telefono
           <input
-            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             {...register("customerPhone")}
           />
         </label>
         <label className="text-sm">
           Gestore
           <select
-            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             {...register("provider")}
           >
             {PROVIDERS.map((provider) => (
@@ -96,7 +96,7 @@ export function ContractForm({ onSuccess }: { onSuccess?: () => void }) {
         <label className="text-sm">
           Servizio
           <select
-            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             {...register("serviceType")}
           >
             {SERVICE_TYPES.map((service) => (
@@ -109,7 +109,7 @@ export function ContractForm({ onSuccess }: { onSuccess?: () => void }) {
         <label className="text-sm">
           Stato
           <select
-            className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+            className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
             {...register("status")}
           >
             {CONTRACT_STATUSES.map((status) => (
@@ -124,7 +124,7 @@ export function ContractForm({ onSuccess }: { onSuccess?: () => void }) {
         Note
         <textarea
           rows={4}
-          className="mt-1 w-full rounded-lg border border-white/10 bg-white/5 p-2 text-white"
+          className="mt-1 w-full rounded-lg border border-gray-300 bg-gray-50 p-2 text-gray-900"
           {...register("notes")}
         />
       </label>
