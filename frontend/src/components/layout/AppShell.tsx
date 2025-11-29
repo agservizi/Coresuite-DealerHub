@@ -24,7 +24,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen bg-gray-100 text-gray-900">
       <Sidebar isOpen={mobileSidebarOpen} onClose={() => setMobileSidebarOpen(false)} collapsed={sidebarCollapsed} onToggleCollapsed={setSidebarCollapsed} />
       <div className="flex flex-1 flex-col">
-        <Navbar onMenuClick={() => setMobileSidebarOpen(true)} />
+        <Navbar onMenuClick={() => setMobileSidebarOpen(true)} collapsed={sidebarCollapsed} />
         <main className={clsx("flex-1 bg-gray-100 px-4 py-8", sidebarCollapsed ? "md:pl-16" : "md:pl-64")}>
           {children}
         </main>
