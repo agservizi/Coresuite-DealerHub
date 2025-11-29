@@ -16,8 +16,8 @@ interface Props {
 export function DashboardCharts({ bars, lines, donut }: Props) {
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <div className="glass-card col-span-1 md:col-span-2 lg:col-span-2 p-4 h-48 md:h-64 lg:h-80 overflow-hidden">
-        <p className="mb-2 text-sm text-gray-500">Contratti per data</p>
+      <div className="glass-card col-span-1 md:col-span-2 lg:col-span-2 p-6 h-64 md:h-80 lg:h-96 overflow-hidden">
+        <p className="mb-3 text-sm text-gray-500">Contratti per data</p>
         <div className="h-full">
           <Line
             className="bg-transparent"
@@ -33,12 +33,23 @@ export function DashboardCharts({ bars, lines, donut }: Props) {
                 },
               ],
             }}
-            options={{ responsive: true, maintainAspectRatio: false }}
+            options={{
+              responsive: true,
+              maintainAspectRatio: false,
+              layout: {
+                padding: {
+                  left: 10,
+                  right: 10,
+                  top: 10,
+                  bottom: 10,
+                },
+              },
+            }}
           />
         </div>
       </div>
-      <div className="glass-card col-span-1 p-4 h-48 md:h-64 lg:h-80 overflow-hidden">
-        <p className="mb-2 text-sm text-gray-500">Contratti per tipo servizio</p>
+      <div className="glass-card col-span-1 p-6 h-64 md:h-80 lg:h-96 overflow-hidden">
+        <p className="mb-3 text-sm text-gray-500">Contratti per tipo servizio</p>
         <div className="h-full">
           <Doughnut
             data={{
@@ -54,6 +65,14 @@ export function DashboardCharts({ bars, lines, donut }: Props) {
             options={{
               responsive: true,
               maintainAspectRatio: false,
+              layout: {
+                padding: {
+                  left: 10,
+                  right: 10,
+                  top: 10,
+                  bottom: 10,
+                },
+              },
               plugins: {
                 legend: {
                   position: 'bottom',
@@ -67,8 +86,8 @@ export function DashboardCharts({ bars, lines, donut }: Props) {
           />
         </div>
       </div>
-      <div className="glass-card col-span-1 md:col-span-2 lg:col-span-3 p-4 h-48 md:h-64 lg:h-80 overflow-hidden">
-        <p className="mb-2 text-sm text-gray-500">Contratti per gestore</p>
+      <div className="glass-card col-span-1 md:col-span-2 lg:col-span-3 p-6 h-64 md:h-80 lg:h-96 overflow-hidden">
+        <p className="mb-3 text-sm text-gray-500">Contratti per gestore</p>
         <div className="h-full">
           <Bar
             data={{
@@ -84,6 +103,14 @@ export function DashboardCharts({ bars, lines, donut }: Props) {
             options={{
               responsive: true,
               maintainAspectRatio: false,
+              layout: {
+                padding: {
+                  left: 10,
+                  right: 10,
+                  top: 10,
+                  bottom: 10,
+                },
+              },
               scales: {
                 x: {
                   ticks: {
