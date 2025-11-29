@@ -7,7 +7,7 @@ export function Navbar() {
   const { user, logout } = useAuth();
 
   return (
-    <header className="flex items-center justify-between border-b border-white/5 bg-slate-900/60 px-4 py-3 text-sm text-slate-50">
+    <header className="flex items-center justify-between border-b border-white/5 bg-slate-900/60 px-4 py-3 text-sm text-slate-50 sticky top-0">
       <div>
         <p className="text-xs uppercase text-slate-400">Utente collegato</p>
         <p className="font-semibold">{user?.name ?? "--"}</p>

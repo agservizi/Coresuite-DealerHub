@@ -29,7 +29,7 @@ export function Sidebar() {
   ];
 
   return (
-    <aside className="hidden min-h-screen w-64 flex-col bg-slate-900/70 px-4 py-8 text-slate-200 md:flex">
+    <aside className="hidden min-h-screen w-64 flex-col bg-slate-900/70 px-4 py-8 text-slate-200 md:flex sticky top-0">
       <div className="mb-8 text-xl font-semibold">DealerHub</div>
       <nav className="flex flex-1 flex-col gap-2">
         {links.map(({ href, icon: Icon, label }) => {
